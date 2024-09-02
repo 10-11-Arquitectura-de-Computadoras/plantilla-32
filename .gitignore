@@ -1,0 +1,45 @@
+# Object files
+*.o
+*.obj
+
+# Listing files
+*.lst
+
+# Binary and Hexadecimal files
+*.bin
+*.hex
+
+# Map files
+*.map
+
+# Build artifacts
+/build/
+/dist/
+*.exe
+*.dll
+
+# Dependency directories
+/deps/
+/vendor/
+
+# IDE and editor directories
+/.vscode/
+/.idea/
+*.sublime-workspace
+
+# Environment files
+.env
+.env.local
+
+# Log files and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Miscellaneous
+*.bak
+*.tmp
+Thumbs.db
+.DS_Store
+node_modules/
+*.ovpn

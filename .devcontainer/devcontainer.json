@@ -1,0 +1,34 @@
+{
+	"name": "ArqComp",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  "customizations": {
+    "vscode": {
+
+      "settings": {
+        "workbench.colorTheme": "Default Dark Modern",
+        "workbench.sideBar.location": "right",
+        "editor.renderWhitespace": "all",
+        "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+        "editor.fontLigatures": true,
+        "files.simpleDialog.enable": true,
+        "editor.cursorSmoothCaretAnimation": "on"
+      },
+
+      "extensions": [
+        "LucianIrsigler.nasm",
+        "ms-vscode.makefile-tools",
+        "ms-vscode.cpptools"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 8081, 5000, 443],
+
+  // Allow the container to interact with host networking
+	"runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW", "--device=/dev/net/tun"],
+
+  "remoteUser": "vscode"
+}
