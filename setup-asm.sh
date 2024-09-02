@@ -36,12 +36,12 @@ fi
 
 # Compile .asm to .o object file
 echo "Action: Compiling assembly file (${CODE_FILE}.asm) to object file (${OBJ_FILE}.o)"
-nasm -f elf64 "./src/${CODE_FILE}" -o "./bin/${OBJ_FILE}"
+nasm -f elf32 "./src/${CODE_FILE}" -o "./bin/${OBJ_FILE}"
 echo "Success: Assembly file compiled to object file."
 
 # Link object file to create a binary
 echo "Action: Linking object file (${OBJ_FILE}.o) to create binary (${BIN_FILE})"
-ld -o "./bin/${BIN_FILE}" "./bin/${OBJ_FILE}"
+ld -m elf_i386 -o "./bin/${BIN_FILE}" "./bin/${OBJ_FILE}"
 echo "Success: Object file linked and binary created."
 
 echo "Compilation and linking complete: ${BIN_FILE} is ready."
